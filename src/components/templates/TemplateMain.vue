@@ -1,12 +1,18 @@
 <template>
   <main id="main">
-      
+      <Form />
   </main>
 </template>
 
 <script>
-export default {
 
+import Form from "@/components/forms/Form"
+
+export default {
+    name:"Main",
+    components:{
+        Form
+    }
 }
 </script>
 

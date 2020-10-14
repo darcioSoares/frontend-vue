@@ -5,16 +5,20 @@
       <Aside />
       <Main />
       <Footer />
+      
 
   </div>
 </template>
 
 <script>
 
+import {mapState} from 'vuex'
+
 import Header from "@/components/templates/TemplateHeader"
 import Aside from "@/components/templates/TemplateAside"
 import Main from "@/components/templates/TemplateMain"
 import Footer from "@/components/templates/TemplateFooter"
+
 
 export default {
     name:"Layout",
@@ -23,9 +27,10 @@ export default {
     },
     data(){
         return{
-            isVisibleMenu:true
+           
         }
-    }
+    },
+    computed:mapState(['isVisibleMenu'])
 
 }
 </script>

@@ -13,7 +13,7 @@ export default {
 <style scoped>
 #header{
     grid-area: header;    
-    background: linear-gradient(to right, #00bf8f, #001510);
+    background: var(--greenDegrade);
 
     /* border-bottom: 1px solid var(--discord); */
 
