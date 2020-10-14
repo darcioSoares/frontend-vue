@@ -5,12 +5,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state:{
-        isVisibleMenu:true,
-        isVisibleLogin:false,
+        
+        isLogged:true,
+        isVisibleForm:true,
+        
+        user:{
+            name:"Barbosa",
+            email:"Jon@cat"
+        }
     },
     mutations:{
-        SetIsVisibleLogin(state){
-            state.isVisibleLogin = !state.isVisibleLogin
+        SetIsVisibleForm(state){
+            state.isVisibleForm = !state.isVisibleForm
         }
 
     }

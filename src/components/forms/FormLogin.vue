@@ -8,20 +8,20 @@
     >
     <!-- animation -->
 
-        <div id="form-login" v-if="isVisibleLogin" >
+        <div id="form-login" v-show="isVisibleForm" >
 
             <div class="form-login-user" >
                 <form >
 
                     <div class="group-form">
                         <label for="email">Email</label>
-                        <input type="text" id="email"
+                        <input type="text" id="emailLogin"
                          placeholder="Write your email" v-model="login.email">        
                     </div>
 
                     <div class="group-form">
                         <label for="password">Password</label>
-                        <input type="password" id="password" 
+                        <input type="password" id="passwordLogin" 
                          placeholder="Write your password" v-model="login.password">
                     </div>
 
@@ -71,7 +71,8 @@ import {mapState} from 'vuex'
 export default {
     name:"Login",
     data(){
-        return{
+        return{            
+           
             login:{
                 email:"",
                 password:""
@@ -91,7 +92,7 @@ export default {
 
             this.clearMsg()    
             this.clearField()       
-            this.$store.commit('SetIsVisibleLogin')
+            this.$store.commit('SetIsVisibleForm')
         },
 
 
@@ -149,8 +150,9 @@ export default {
         }
 
     },
-
-    computed:mapState(['isVisibleLogin'])
+    computed:mapState(['isVisibleForm'])
+    
+    
     
 }
 </script>

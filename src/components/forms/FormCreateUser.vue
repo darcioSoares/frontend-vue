@@ -5,7 +5,7 @@
     enter-active-class="animate__animated animate__zoomInDown"
     leave-active-class="animate__animated animate__zoomOutDown"
     >
-        <div id="form-create" v-if="!isVisibleLogin">
+        <div id="form-create" v-show="!isVisibleForm">
             <div class="form-create-user">
 
                 <form> 
@@ -97,7 +97,7 @@ export default {
 
             this.clearMsg()    
             this.clearFieldCreate()       
-            this.$store.commit('SetIsVisibleLogin')
+            this.$store.commit('SetIsVisibleForm')
         },
 
         sendDataUSer(){
@@ -168,7 +168,8 @@ export default {
 
 
     },
-    computed:mapState(['isVisibleLogin'])
+    computed:mapState(['isVisibleForm'])
+    
 
 }
 </script>

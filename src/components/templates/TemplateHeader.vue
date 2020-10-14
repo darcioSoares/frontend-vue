@@ -1,12 +1,20 @@
 <template>
   <header id="header">
+
+    <UserDropdown />
       
   </header>
 </template>
 
 <script>
+
+import UserDropdown from "../UserDropdown"
+
 export default {
     name:"Header",
+    components:{
+      UserDropdown
+    }
 }
 </script>
 

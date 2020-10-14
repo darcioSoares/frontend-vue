@@ -5,8 +5,17 @@
 </template>
 
 <script>
+
+import {mapState} from 'vuex'
+
 export default {
-    name:"Aside"
+    name:"Aside",
+    data(){
+      return{
+
+      }
+    },
+    computed:mapState(['isLogged'])
 }
 </script>
 

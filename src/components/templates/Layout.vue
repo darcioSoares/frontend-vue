@@ -1,5 +1,5 @@
 <template>
-  <div class="layout" v-bind:class="{'isVisibleMenu':isVisibleMenu }">
+  <div class="layout" v-bind:class="{'isVisibleMenu':!isLogged }">
 
       <Header/>
       <Aside />
@@ -30,7 +30,7 @@ export default {
            
         }
     },
-    computed:mapState(['isVisibleMenu'])
+    computed:mapState(['isLogged','isVisibleMenu'])
 
 }
 </script>
