@@ -9,8 +9,8 @@ export default new Vuex.Store({
         isVisibleLogin:false,
     },
     mutations:{
-        SetIsVisibleLogin(state, value){
-            state.isVisibleLogin = value
+        SetIsVisibleLogin(state){
+            state.isVisibleLogin = !state.isVisibleLogin
         }
 
     }

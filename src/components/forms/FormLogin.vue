@@ -3,8 +3,8 @@
     <transition  
         name="isVisibleForm"
         :duration = "{enter:1000, leave:800}"
-        enter-active-class="animate__animated animate__heartBeat"
-       leave-active-class="animate__animated animate__heartBeat"
+        enter-active-class="animate__animated animate__flip"
+       leave-active-class="animate__animated animate__flipOutY"
     >
     <!-- animation -->
 
@@ -89,15 +89,15 @@ export default {
     methods:{
         alterForms(){
 
-            let value = !(this.teste )
-            
-            this.$store.commit('SetIsVisibleLogin', value)
+            this.clearMsg()    
+            this.clearField()       
+            this.$store.commit('SetIsVisibleLogin')
         },
 
 
         validatorFieldLogin(){
 
-            this.clearError()
+            this.clearMsg()
             
 
             if(!(this.login.email.trim() && this.login.password.trim())){
@@ -139,7 +139,7 @@ export default {
             this.login.password = ""
         },
 
-        clearError(){
+        clearMsg(){
             this.error.fetchError = false
             this.error.fieldEmpty = false
             this.error.password = false

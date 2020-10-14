@@ -36,7 +36,7 @@
                 </form>
 
                  <div class="container-link">
-                    <p class="form-link" ><span> Login</span></p>                    
+                    <p class="form-link" v-on:click="alterForms" ><span> Login</span></p>                    
                 </div>
 
             </div>
@@ -93,6 +93,12 @@ export default {
         }       
     },
     methods:{
+         alterForms(){
+
+            this.clearMsg()    
+            this.clearFieldCreate()       
+            this.$store.commit('SetIsVisibleLogin')
+        },
 
         sendDataUSer(){
 
