@@ -50,6 +50,10 @@
                 <p>Error: <span>Email</span> not found</p>
             </div>
 
+            <div class="error error-server" v-if="error.fetchError">
+                <p>Error: <span>Server</span> down</p>
+            </div>
+
             <div class="error " v-if="error.customError">
                 <p> {{error.customError}} </p>
             </div>
@@ -105,19 +109,17 @@ export default {
             if(this.login.email.length < 6){     
 
                 this.error.customError = `Error: Email less than 6`
+                return
             }
             else if(this.login.password.length < 4){
 
                 this.error.customError = `Error: Password less than 4`
+                return
             }
             
-
-           // this.clearField()
-
+            this.fetchLogin()
+            this.clearField()
             
-
-
-
         },
 
          fetchLogin(){
@@ -242,8 +244,7 @@ form{
 
 }
 .error-empty{
-    z-index: 2  ;
-
+    z-index: 1 ;
 }
 
 </style>
