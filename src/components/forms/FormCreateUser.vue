@@ -5,7 +5,7 @@
     enter-active-class="animate__animated animate__zoomInDown"
     leave-active-class="animate__animated animate__zoomOutDown"
     >
-        <div id="form-create" v-show="!isVisibleForm">
+        <div id="form-create" v-show="!toggleForm">
             <div class="form-create-user">
 
                 <form> 
@@ -97,7 +97,7 @@ export default {
 
             this.clearMsg()    
             this.clearFieldCreate()       
-            this.$store.commit('SetIsVisibleForm')
+            this.$store.commit('SetToggleForm')
         },
 
         sendDataUSer(){
@@ -168,7 +168,7 @@ export default {
 
 
     },
-    computed:mapState(['isVisibleForm'])
+    computed:mapState(['toggleForm'])
     
 
 }

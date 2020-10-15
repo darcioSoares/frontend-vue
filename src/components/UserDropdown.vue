@@ -1,11 +1,11 @@
 <template>
   <div class="container-dropdown" v-if="isLogged">
-      <div class="user-dropdown" v-on:click="isVisibleDropdown = !isVisibleDropdown ">
-          <span class="name-user">{{user.name}}</span>
+      <div class="user-dropdown" >
+          <span class="name-user">{{user.email}}</span>
           <div class="user-img"> <img src="@/assets/user1.jpeg" alt="user"> </div>          
       </div>
 
-      <div class="menu" v-show="isVisibleDropdown">
+      <div class="menu-options" >
           <p>Sair</p>
       </div>
   </div>
@@ -22,7 +22,7 @@ export default {
             isVisibleDropdown:false
         }
     },
-
+    
     computed:mapState(['isLogged','user'])
 
 }
@@ -45,9 +45,10 @@ export default {
     
     border-radius:8px;     
 }
-.user-dropdown:hover{
+.user-dropdown:hover {
     background-color:var(--discord);
-    cursor: pointer;
+    cursor: pointer;    
+
 }
 
 
@@ -63,10 +64,12 @@ export default {
     color:white;
 }
 
-.menu{
+.menu-options{
     display:flex;
     justify-content: center;
     align-items: center;
+
+    
 
     margin-left:20px;
     width: 80%;
@@ -75,8 +78,18 @@ export default {
     box-shadow: 4px 4px 4px 4px black;
     color:black;
     background-color: var(--clearGreen);
+    z-index: 1;
     
     margin-top:8px;
+
+    visibility: hidden;
+    opacity: 0;
+    transition-duration: 0.6s;
+}
+
+.container-dropdown:hover .menu-options{
+    visibility: visible;
+    opacity: 1;
 }
 
 </style>

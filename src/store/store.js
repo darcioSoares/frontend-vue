@@ -6,17 +6,16 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state:{
         
-        isLogged:true,
-        isVisibleForm:true,
-        
-        user:{
-            name:"Barbosa",
-            email:"Jon@cat"
-        }
+        isLogged:false,
+        toggleForm:true,
+        user:""
     },
     mutations:{
-        SetIsVisibleForm(state){
-            state.isVisibleForm = !state.isVisibleForm
+        SetToggleForm(state){
+            state.toggleForm = !state.toggleForm
+        },
+        SetUser(state, newUser){
+            state.user = newUser
         }
 
     }

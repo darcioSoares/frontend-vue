@@ -8,7 +8,7 @@
     >
     <!-- animation -->
 
-        <div id="form-login" v-show="isVisibleForm" >
+        <div id="form-login" v-show="toggleForm" >
 
             <div class="form-login-user" >
                 <form >
@@ -92,9 +92,11 @@ export default {
 
             this.clearMsg()    
             this.clearField()       
-            this.$store.commit('SetIsVisibleForm')
+            this.$store.commit('SetToggleForm')
         },
-
+        userTeste(user){
+            this.$store.commit('SetUser',user)
+        },
 
         validatorFieldLogin(){
 
@@ -131,7 +133,13 @@ export default {
             headers:{"Content-type":"application/json"}
             })            
             .then(res=> res.json())
-            .then(res => console.log(res))
+            .then(res => {               
+                 
+                console.log(res)
+                this.userTeste(res)
+                
+                }                
+            )
             .catch(()=>this.error.fetchError = true) 
         },
 
@@ -150,7 +158,7 @@ export default {
         }
 
     },
-    computed:mapState(['isVisibleForm'])
+    computed:mapState(['toggleForm'])
     
     
     
