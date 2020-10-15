@@ -6,7 +6,7 @@
       </div>
 
       <div class="menu-options" >
-          <p>Sair</p>
+          <p v-on:click="logOut">Sair</p>
       </div>
   </div>
 </template>
@@ -19,11 +19,20 @@ export default {
     name:"UserDropdown",
     data(){
         return{
-            isVisibleDropdown:false
+            
+        }
+    },
+    methods:{
+        logOut(){
+            this.$store.commit('setLogOut')
         }
     },
     
-    computed:mapState(['isLogged','user'])
+    computed:{
+
+        ...mapState(['isLogged','user'])
+        
+    }
 
 }
 </script>
@@ -91,5 +100,8 @@ export default {
     visibility: visible;
     opacity: 1;
 }
-
+.menu-options > p{
+    cursor: pointer;
+    
+}
 </style>

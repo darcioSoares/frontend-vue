@@ -8,14 +8,25 @@ export default new Vuex.Store({
         
         isLogged:false,
         toggleForm:true,
-        user:""
+        user: false
     },
     mutations:{
         SetToggleForm(state){
             state.toggleForm = !state.toggleForm
         },
         SetUser(state, newUser){
-            state.user = newUser
+             state.user = newUser
+             
+             if(state.user){
+                 state.isLogged = true
+                 console.log(state.user)
+             }else{
+                 state.isLogged = false
+             }
+        },
+        setLogOut(state){
+            state.user = false
+            state.isLogged = false
         }
 
     }

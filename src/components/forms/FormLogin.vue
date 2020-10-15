@@ -94,7 +94,7 @@ export default {
             this.clearField()       
             this.$store.commit('SetToggleForm')
         },
-        userTeste(user){
+        setUser(user){
             this.$store.commit('SetUser',user)
         },
 
@@ -132,12 +132,11 @@ export default {
             body: JSON.stringify(user),
             headers:{"Content-type":"application/json"}
             })            
-            .then(res=> res.json())
+            .then(res => res.json())
             .then(res => {               
-                 
-                console.log(res)
-                this.userTeste(res)
                 
+                this.setUser(res)
+                                
                 }                
             )
             .catch(()=>this.error.fetchError = true) 
