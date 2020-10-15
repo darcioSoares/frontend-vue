@@ -1,24 +1,7 @@
 # project
 
-## Project setup
-```
-npm install
+## App created in Vue js
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[click here for see](https://agitated-lumiere-8f4475.netlify.app/).
