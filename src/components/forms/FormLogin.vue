@@ -76,7 +76,7 @@ export default {
             login:{
                 email:"",
                 password:""
-            },
+            },            
             error:{
                 fetchError:false,
                 fieldEmpty:false,
@@ -96,6 +96,11 @@ export default {
         },
         setUser(user){
             this.$store.commit('SetUser',user)
+        },
+        setSessionStorage(data){
+
+            sessionStorage.setItem('user',JSON.stringify(data))
+
         },
 
         validatorFieldLogin(){
@@ -133,9 +138,10 @@ export default {
             headers:{"Content-type":"application/json"}
             })            
             .then(res => res.json())
-            .then(res => {               
-                
+            .then(res => {             
+                                
                 this.setUser(res)
+                this.setSessionStorage(res)                
                                 
                 }                
             )

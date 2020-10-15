@@ -19,7 +19,7 @@ export default new Vuex.Store({
              
              if(state.user){
                  state.isLogged = true
-                 console.log(state.user)
+                 
              }else{
                  state.isLogged = false
              }
@@ -27,6 +27,7 @@ export default new Vuex.Store({
         setLogOut(state){
             state.user = false
             state.isLogged = false
+            sessionStorage.clear('user')
         }
 
     }
